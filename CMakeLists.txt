@@ -10,9 +10,6 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -26,13 +23,11 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-
-
-
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Ik.srv"
-        "srv/Fk.srv"
-        "srv/Collisions.srv"
+  "srv/Fk.srv"
+  "srv/Collisions.srv"
+  "srv/AddObject.srv"
   DEPENDENCIES geometry_msgs sensor_msgs# Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
 )
 
