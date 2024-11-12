@@ -1,5 +1,8 @@
-geometry_msgs/Pose pose
 string type
+string name
+geometry_msgs/Pose pose
 geometry_msgs/Vector3 dimensions
+std_msgs/ColorRGBA color
 ---
 bool success
+string message
