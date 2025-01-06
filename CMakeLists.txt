@@ -29,9 +29,11 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Collisions.srv"
   "srv/AddObject.srv"
   "srv/RemoveObject.srv"
+  "msg/ObjectParameters.msg"
   "srv/GenerateRM.srv"
   "action/DataGeneration.action"
   DEPENDENCIES geometry_msgs sensor_msgs# Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
+
 )
 
 ament_package()
