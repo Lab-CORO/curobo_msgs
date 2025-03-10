@@ -33,6 +33,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ObjectParameters.msg"
   "srv/GenerateRM.srv"
   "action/DataGeneration.action"
+  "action/TrajectoryGeneration.action"
   "srv/GetVoxelGrid.srv"
   "srv/GetCollisionDistance.srv"
   "srv/SceneGenerator.srv"
