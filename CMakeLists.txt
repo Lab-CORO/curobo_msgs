@@ -26,6 +26,7 @@ endif()
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Ik.srv"
+  "srv/IkBatch.srv"
   "srv/Fk.srv"
   "srv/Collisions.srv"
   "srv/AddObject.srv"
