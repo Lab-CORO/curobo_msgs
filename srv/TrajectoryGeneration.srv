@@ -1,5 +1,26 @@
+# Unified trajectory generation with optional batch mode and constraints
+# For single target: provide only target_pose
+# For batch: provide batch_targets array
+
+# Single target pose (used if batch_targets is empty)
 geometry_msgs/Pose target_pose
+
+# Batch target poses (if provided, target_pose is ignored)
+geometry_msgs/Pose[] batch_targets
+
+# Optional: Constraint specification
+# hold_vec_weight: [qw, qx, qy, qz, px, py, pz]
+# Values: 0.0 = free, 1.0 = constrained
+# Example: [1,1,1,0,0,0] = hold orientation, free position
+float32[] hold_vec_weight
+
+# Optional: hold_partial_pose flag
+# If true, uses hold_vec_weight to partially constrain the pose
+bool hold_partial_pose
+
 ---
 
 bool success
 string message
+# Index of trajectories that succeeded (for batch mode)
+int32[] success_indices
