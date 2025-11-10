@@ -40,6 +40,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/GetVoxelGrid.srv"
   "srv/GetCollisionDistance.srv"
   "srv/SceneGenerator.srv"
+  "srv/SetPlanner.srv"
   DEPENDENCIES geometry_msgs nav2_msgs sensor_msgs# Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
 
 )
