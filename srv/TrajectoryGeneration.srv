@@ -1,4 +1,6 @@
 geometry_msgs/Pose target_pose
+geometry_msgs/Pose[] target_poses  # Single pose or multiple waypoints for multi-point planning
+
 ---
 
 bool success
