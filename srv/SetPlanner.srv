@@ -5,6 +5,7 @@ uint8 CLASSIC = 0
 uint8 MPC = 1
 uint8 BATCH = 2
 uint8 CONSTRAINED = 3
+uint8 MULTIPOINT = 4
 
 # Request: desired planner type
 uint8 planner_type
