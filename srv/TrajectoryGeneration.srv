@@ -1,5 +1,10 @@
+geometry_msgs/Pose start_pose
+geometry_msgs/Pose[] start_pose
+
 geometry_msgs/Pose target_pose
 geometry_msgs/Pose[] target_poses  # Single pose or multiple waypoints for multi-point planning
+int8[] trajectory_constraints # [theta_x, theta_y, theta_z, x, y, z]
+int8[] trajectories_contraints # Flattened: [theta_x0, theta_y0, theta_z0, x0, y0, z0, theta_x1, theta_y1, theta_z1, x1, y1, z1, ...]
 
 ---
 
