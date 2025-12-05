@@ -10,6 +10,5 @@ int8[] trajectories_contraints # Flattened: [theta_x0, theta_y0, theta_z0, x0, y
 
 bool success
 string message
-# positions
-# velocity
-# dt
+sensor_msgs/JointState[] trajectory  # Trajectory waypoints (position, velocity)
+float64 dt  # Time step between waypoints (seconds)
