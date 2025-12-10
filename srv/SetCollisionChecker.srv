@@ -1,0 +1,18 @@
+# Service pour changer le type de collision checker dynamiquement
+#
+# Constants pour les types de checker
+uint8 BLOX = 0      # Voxel-based (nvblox), bon pour point clouds
+uint8 MESH = 1      # Mesh-based (Warp), précis pour mesh
+uint8 PRIMITIVE = 2 # Cuboid-only, le plus rapide
+
+# Request: type de checker désiré
+uint8 checker_type
+
+---
+
+# Response
+bool success                   # True si changement réussi
+string message                # Message de statut
+string previous_checker       # Nom du checker précédent
+string current_checker        # Nom du nouveau checker
+int32 num_obstacles_restored  # Nombre d'obstacles restaurés
