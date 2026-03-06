@@ -41,6 +41,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/GetCollisionDistance.srv"
   "srv/SceneGenerator.srv"
   "srv/SetPlanner.srv"
+  "srv/SetLinkCollision.srv"
   "srv/GetPlanners.srv"
   "srv/SetCollisionCache.srv"
   "srv/SetRobotStrategy.srv"
