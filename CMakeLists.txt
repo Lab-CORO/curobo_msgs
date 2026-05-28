@@ -32,6 +32,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/AddObject.srv"
   "srv/RemoveObject.srv"
   "msg/ObjectParameters.msg"
+  "msg/SparseVoxelGrid.msg"
   "srv/GenerateRM.srv"
   "action/DataGeneration.action"
   "action/SendTrajectory.action"
