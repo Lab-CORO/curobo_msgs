@@ -1,7 +1,18 @@
-
+# Goal — target for the unified "generate + execute" action.
+# Mirrors TrajectoryGeneration.srv so the action can plan if no cached plan is
+# reused. The active planner decides which field(s) it consumes.
+sensor_msgs/JointState start_pose
+geometry_msgs/Pose target_pose
+geometry_msgs/Pose[] target_poses
+float64[] target_joint_positions
+bool allow_cached true   # reuse a matching, non-expired pre-planned trajectory
 ---
 bool success
 string message
 ---
+# Feedback — status carried ONLY by the action feedback (no status topic).
+string state              # PLANNING | EXECUTING | TRACKING | ON_TARGET | FAILED
+float32 step_progression  # open-loop progress [0..1]
+float64 position_error    # current Cartesian error (m), reactive
+bool on_target            # true when the arm is on the target (reactive: keeps servoing)
 sensor_msgs/JointState joint_command
-float32 step_progression
