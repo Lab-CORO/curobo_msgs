@@ -11,6 +11,7 @@ find_package(rosidl_default_generators REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -51,7 +52,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/GetRobotStrategies.srv"
   "srv/WarmupIK.srv"
   "srv/WarmupFK.srv"
-  DEPENDENCIES geometry_msgs nav2_msgs sensor_msgs# Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
+  "msg/ReachabilityMetrics.msg"
+  DEPENDENCIES geometry_msgs nav2_msgs sensor_msgs std_msgs
 
 )
 
