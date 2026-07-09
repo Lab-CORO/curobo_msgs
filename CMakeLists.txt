@@ -33,6 +33,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/AddObject.srv"
   "srv/AttachObject.srv"
   "srv/RemoveObject.srv"
+  "srv/SetMask.srv"
   "msg/ObjectParameters.msg"
   "msg/SparseVoxelGrid.msg"
   "msg/GpuVoxelTensor.msg"
