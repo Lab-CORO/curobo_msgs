@@ -54,6 +54,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/WarmupIK.srv"
   "srv/WarmupFK.srv"
   "msg/ReachabilityMetrics.msg"
+  "msg/MpcCosts.msg"
   DEPENDENCIES geometry_msgs nav2_msgs sensor_msgs std_msgs
 
 )
