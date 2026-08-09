@@ -16,3 +16,12 @@ float32 step_progression  # open-loop progress [0..1]
 float64 position_error    # current Cartesian error (m), reactive
 bool on_target            # true when the arm is on the target (reactive: keeps servoing)
 sensor_msgs/JointState joint_command
+# Angular error (rad) between the tool and the goal orientation, FK-measured.
+# on_target gates on BOTH this and position_error: a reactive goal that reaches
+# its xyz with the tool mis-aimed is not on target. Open-loop planners leave it
+# at 0.0 — they never publish on_target=true either.
+float64 orientation_error
+# Consecutive steps with BOTH errors inside tolerance. Resets to 0 the moment
+# either leaves. on_target requires it to reach convergence_hold_steps, so a
+# trajectory that touches the goal and drifts back out never reports success.
+int32 hold_count
