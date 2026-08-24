@@ -25,3 +25,12 @@ float64 orientation_error
 # either leaves. on_target requires it to reach convergence_hold_steps, so a
 # trajectory that touches the goal and drifts back out never reports success.
 int32 hold_count
+# The reactive solver's OWN error metrics (its optimization cost target, e.g.
+# MPCSolverResult.position_error/rotation_error), as opposed to
+# position_error/orientation_error above which are FK-measured against the
+# real/fed-back robot state. The two can diverge — e.g. under execution lag or
+# on an unreachable goal the solver's error keeps improving on its internal
+# plan while the FK error against the real arm does not. -1.0 when the active
+# planner does not expose this (default; only LBFGS currently fills it in).
+float64 controller_position_error
+float64 controller_orientation_error
