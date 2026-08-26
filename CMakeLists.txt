@@ -12,6 +12,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(trajectory_msgs REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -29,6 +30,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Ik.srv"
   "srv/IkBatch.srv"
   "srv/Fk.srv"
+  "srv/FkBatch.srv"
   "srv/Collisions.srv"
   "srv/AddObject.srv"
   "srv/AttachObject.srv"
@@ -54,7 +56,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/WarmupFK.srv"
   "msg/ReachabilityMetrics.msg"
   "msg/MpcCosts.msg"
-  DEPENDENCIES geometry_msgs nav2_msgs sensor_msgs std_msgs
+  "msg/MpcStepDiagnostics.msg"
+  DEPENDENCIES geometry_msgs nav2_msgs sensor_msgs std_msgs trajectory_msgs
 
 )
 
